@@ -5,8 +5,6 @@
 
 function canBalance(array) {
   //Type your solutions here
-  
-
 }
 
 module.exports = canBalance;
