@@ -5,6 +5,20 @@
 
 function canBalance(array) {
   //Type your solutions here
+  const sum = array.reduce((a, b) => a + b);
+  const halfSum = sum / 2;
+  if (sum % 2 !== 0 || halfSum === 0) return -1;
+  let count = 0;
+  let currentIndex = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (count !== halfSum) {
+      count += array[i];
+      currentIndex = i;
+    }
+  }
+  const leftSide = array.slice(0, currentIndex + 1);
+  const rightSide = array.slice(currentIndex + 1);
+  return [leftSide.length, rightSide.length];
 }
 
 module.exports = canBalance;
